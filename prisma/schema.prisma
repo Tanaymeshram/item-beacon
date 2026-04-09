@@ -1,0 +1,71 @@
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id           String     @id @default(uuid())
+  email        String     @unique
+  password     String
+  name         String
+  rewardPoints Int        @default(0)
+  role         String     @default("user")
+  items        Item[]
+  createdAt    DateTime   @default(now())
+}
+
+model Item {
+  id               String     @id @default(uuid())
+  ownerId          String?
+  owner            User?      @relation(fields: [ownerId], references: [id])
+  ownerName        String?
+  ownerContact     String?
+  secColor         String?
+  secBirthplace    String?
+  name             String
+  description      String
+  category         String
+  imageUrl         String?
+  qrCodeId         String     @unique @default(uuid())
+  status           String     @default("lost")
+  hiddenIdentifier String?
+  cryptoHash       String?
+  reports          Report[]
+  chats            Chat[]
+  auditLogs        AuditLog[]
+  createdAt        DateTime   @default(now())
+}
+
+model Report {
+  id            String   @id @default(uuid())
+  itemId        String
+  item          Item     @relation(fields: [itemId], references: [id])
+  finderName    String
+  finderContact String?
+  message       String
+  locationLat   Float?
+  locationLng   Float?
+  createdAt     DateTime @default(now())
+}
+
+model Chat {
+  id        String   @id @default(uuid())
+  itemId    String
+  item      Item     @relation(fields: [itemId], references: [id])
+  sender    String
+  message   String
+  createdAt DateTime @default(now())
+}
+
+model AuditLog {
+  id        String   @id @default(uuid())
+  itemId    String
+  item      Item     @relation(fields: [itemId], references: [id])
+  action    String
+  details   String?
+  createdAt DateTime @default(now())
+}

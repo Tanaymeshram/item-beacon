@@ -1,0 +1,13 @@
+﻿src/app/leaderboard/page.tsx(46,30): error TS7006: Parameter 'user' implicitly has an 'any' type.
+src/app/leaderboard/page.tsx(46,36): error TS7006: Parameter 'index' implicitly has an 'any' type.
+src/app/map/MapView.tsx(5,15): error TS7016: Could not find a declaration file for module 'leaflet'. 'C:/Users/Lenovo/Desktop/NexusSandbox/digital-lost-and-found/node_modules/leaflet/dist/leaflet-src.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/leaflet` if it exists or add a new declaration (.d.ts) file containing `declare module 'leaflet';`
+src/app/map/MapView.tsx(25,9): error TS2322: Type '{ children: (Element | Element[])[]; center: [number, number]; zoom: number; scrollWheelZoom: boolean; style: { height: string; width: string; }; }' is not assignable to type 'IntrinsicAttributes & MapContainerProps & RefAttributes<LeafletMap>'.
+  Property 'center' does not exist on type 'IntrinsicAttributes & MapContainerProps & RefAttributes<LeafletMap>'.
+src/app/map/MapView.tsx(31,11): error TS2322: Type '{ attribution: string; url: string; }' is not assignable to type 'IntrinsicAttributes & TileLayerProps & RefAttributes<LeafletTileLayer>'.
+  Property 'attribution' does not exist on type 'IntrinsicAttributes & TileLayerProps & RefAttributes<LeafletTileLayer>'.
+src/app/map/MapView.tsx(36,57): error TS2322: Type '{ children: Element; key: number; position: any[]; icon: any; }' is not assignable to type 'IntrinsicAttributes & MarkerProps & RefAttributes<LeafletMarker<any>>'.
+  Property 'icon' does not exist on type 'IntrinsicAttributes & MarkerProps & RefAttributes<LeafletMarker<any>>'.
+src/lib/auth.ts(1,17): error TS7016: Could not find a declaration file for module 'jsonwebtoken'. 'C:/Users/Lenovo/Desktop/NexusSandbox/digital-lost-and-found/node_modules/jsonwebtoken/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/jsonwebtoken` if it exists or add a new declaration (.d.ts) file containing `declare module 'jsonwebtoken';`
+src/lib/prisma.ts(1,10): error TS2305: Module '"@prisma/client"' has no exported member 'PrismaClient'.
